@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - EduForge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">EduForge</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html" class="active">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <h1>Login</h1>
+    <p>Welcome back! Please login to continue.</p>
+  </section>
+
+  <!-- Login Form -->
+  <section class="form-section">
+    <form id="loginForm" novalidate>
+
+      <div id="loginError" class="msg-error" style="display:none;">
+        Invalid email or password. Please try again.
+      </div>
+      <div id="loginSuccess" class="msg-success" style="display:none;">
+        Login successful! Redirecting...
+      </div>
+
+      <p style="margin-bottom:16px; background:#f0f7ff; padding:10px; border-radius:6px; font-size:0.9rem;">
+        Demo credentials: <strong>demo@eduforge.com</strong> / <strong>Demo@1234</strong>
+      </p>
+
+      <div class="form-group">
+        <label for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" />
+        <span class="error" id="loginEmailErr"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" />
+        <span class="error" id="loginPassErr"></span>
+      </div>
+
+      <div class="form-group">
+        <label><input type="checkbox" id="remember" /> Remember me</label>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+
+      <p style="margin-top:16px;">Don't have an account? <a href="register.html">Register here</a></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EduForge. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      document.querySelectorAll(".error").forEach(el => el.textContent = "");
+      document.getElementById("loginError").style.display   = "none";
+      document.getElementById("loginSuccess").style.display = "none";
+
+      var email    = document.getElementById("loginEmail").value.trim();
+      var password = document.getElementById("loginPassword").value;
+      var valid    = true;
+
+      if (!email) {
+        document.getElementById("loginEmailErr").textContent = "Email is required.";
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById("loginEmailErr").textContent = "Enter a valid email address.";
+        valid = false;
+      }
+
+      if (!password) {
+        document.getElementById("loginPassErr").textContent = "Password is required.";
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Demo login check
+      if (email === "demo@eduforge.com" && password === "Demo@1234") {
+        document.getElementById("loginSuccess").style.display = "block";
+        setTimeout(function() { window.location.href = "index.html"; }, 2000);
+      } else {
+        document.getElementById("loginError").style.display = "block";
+      }
+    });
+  </script>
+
+</body>
+</html>

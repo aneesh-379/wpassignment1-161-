@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - EduForge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">EduForge</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="register.html" class="active">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <h1>Create an Account</h1>
+    <p>Join thousands of learners on EduForge</p>
+  </section>
+
+  <!-- Register Form -->
+  <section class="form-section">
+    <form id="registerForm" novalidate>
+
+      <div id="successMsg" class="msg-success" style="display:none;">
+        Account created successfully! <a href="login.html">Login here</a>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" />
+        <span class="error" id="nameErr"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+        <span class="error" id="emailErr"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Minimum 8 characters" />
+        <span class="error" id="passErr"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm">Confirm Password</label>
+        <input type="password" id="confirm" placeholder="Re-enter your password" />
+        <span class="error" id="confirmErr"></span>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="terms" />
+          I agree to the Terms &amp; Conditions
+        </label>
+        <span class="error" id="termsErr"></span>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+
+      <p style="margin-top:16px;">Already have an account? <a href="login.html">Login here</a></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EduForge. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Clear previous errors
+      document.querySelectorAll(".error").forEach(el => el.textContent = "");
+      document.getElementById("successMsg").style.display = "none";
+
+      var name     = document.getElementById("name").value.trim();
+      var email    = document.getElementById("email").value.trim();
+      var password = document.getElementById("password").value;
+      var confirm  = document.getElementById("confirm").value;
+      var terms    = document.getElementById("terms").checked;
+      var valid    = true;
+
+      // Name
+      if (name.length < 3) {
+        document.getElementById("nameErr").textContent = "Name must be at least 3 characters.";
+        valid = false;
+      }
+
+      // Email
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailErr").textContent = "Please enter a valid email address.";
+        valid = false;
+      }
+
+      // Password
+      if (password.length < 8) {
+        document.getElementById("passErr").textContent = "Password must be at least 8 characters.";
+        valid = false;
+      }
+
+      // Confirm Password
+      if (password !== confirm) {
+        document.getElementById("confirmErr").textContent = "Passwords do not match.";
+        valid = false;
+      }
+
+      // Terms
+      if (!terms) {
+        document.getElementById("termsErr").textContent = "You must accept the terms to continue.";
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById("successMsg").style.display = "block";
+        this.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

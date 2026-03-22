@@ -1,0 +1,621 @@
+/* =============================================
+   EduForge - styles.css
+   External CSS for all pages
+   ============================================= */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --blue:       #1a73e8;
+  --blue-dark:  #1558b0;
+  --text:       #222222;
+  --muted:      #666666;
+  --border:     #dddddd;
+  --bg:         #f5f7fa;
+  --white:      #ffffff;
+  --green:      #1e7e34;
+  --red:        #c0392b;
+  --yellow:     #f59e0b;
+}
+
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--blue-dark);
+}
+
+h1, h2, h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a2e;
+  padding: 14px 40px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+/* =============================================
+   BANNER (Home page)
+   ============================================= */
+.banner {
+  background-color: #1a1a2e;
+  color: var(--white);
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom: 4px solid var(--blue);
+}
+
+.banner h1 {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.banner p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+  margin: 0 auto 28px auto;
+}
+
+
+/* =============================================
+   BUTTON
+   ============================================= */
+.btn {
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+/* =============================================
+   SECTIONS — shared styles
+   ============================================= */
+.intro,
+.courses-section,
+.detail-section,
+.form-section,
+.contact-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.page-title {
+  background-color: #1a1a2e;
+  color: var(--white);
+  padding: 40px 40px 30px;
+  border-bottom: 3px solid var(--blue);
+}
+
+.page-title h1 {
+  font-size: 1.9rem;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.page-title p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.page-title a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-title a:hover {
+  color: var(--white);
+}
+
+/* Section headings */
+.intro h2,
+.courses-section h2,
+.detail-box h2,
+.contact-info h2,
+.contact-form h2 {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+
+/* =============================================
+   CARDS GRID (Home & Courses)
+   ============================================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
+
+/* Home info cards */
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 22px 20px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+
+/* =============================================
+   COURSE CARDS
+   ============================================= */
+.course-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Coloured placeholder for course image */
+.course-img {
+  height: 140px;
+  width: 100%;
+}
+
+.img1 { background: linear-gradient(135deg, #ff6b35, #f7c59f); }
+.img2 { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+.img3 { background: linear-gradient(135deg, #059669, #6ee7b7); }
+.img4 { background: linear-gradient(135deg, #0369a1, #7dd3fc); }
+.img5 { background: linear-gradient(135deg, #dc2626, #fca5a5); }
+.img6 { background: linear-gradient(135deg, #d97706, #fde68a); }
+
+.course-info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.course-info h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.course-info .instructor {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.course-info p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+  flex: 1;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+}
+
+.rating {
+  color: var(--yellow);
+  font-size: 0.88rem;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.course-info .btn {
+  margin-top: 8px;
+  text-align: center;
+}
+
+
+/* =============================================
+   COURSE DETAIL
+   ============================================= */
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detail-box {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.info-table th,
+.info-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.info-table th {
+  background-color: var(--bg);
+  font-weight: bold;
+  width: 35%;
+}
+
+.curriculum-list {
+  padding-left: 20px;
+}
+
+.curriculum-list > li {
+  margin-bottom: 14px;
+  list-style: decimal;
+}
+
+.curriculum-list > li > ul {
+  margin-top: 6px;
+  padding-left: 20px;
+}
+
+.curriculum-list > li > ul > li {
+  list-style: disc;
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 2px 0;
+}
+
+.enroll-box {
+  text-align: center;
+}
+
+.enroll-box p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.discount {
+  color: var(--green);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
+/* =============================================
+   FORMS (Register, Login)
+   ============================================= */
+.form-section {
+  max-width: 500px;
+}
+
+form {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.93rem;
+  font-family: Georgia, serif;
+  color: var(--text);
+  background-color: var(--bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  background-color: var(--white);
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+.error {
+  display: block;
+  color: var(--red);
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+.msg-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: var(--green);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.msg-error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: var(--red);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+form .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+
+/* =============================================
+   CONTACT PAGE
+   ============================================= */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.contact-info {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.info-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-item h3 {
+  font-size: 0.95rem;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.contact-form {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.contact-form form {
+  border: none;
+  padding: 0;
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background-color: #1a1a2e;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 24px 20px;
+  margin-top: 60px;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer ul li a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+}
+
+footer ul li a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+
+  .banner {
+    padding: 50px 20px;
+  }
+
+  .banner h1 {
+    font-size: 1.7rem;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    gap: 4px;
+  }
+
+  nav ul li a {
+    padding: 5px 10px;
+    font-size: 0.82rem;
+  }
+}

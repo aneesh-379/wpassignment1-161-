@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- =============================================
+       courses.xsd
+       Validates the structure of courses.xml
+       ============================================= -->
+
+  <!-- Root element -->
+  <xs:element name="courses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="course" type="CourseType"
+                    minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Course type definition -->
+  <xs:complexType name="CourseType">
+    <xs:sequence>
+      <xs:element name="title"       type="xs:string"/>
+      <xs:element name="category"    type="CategoryType"/>
+      <xs:element name="instructor"  type="xs:string"/>
+      <xs:element name="duration"    type="xs:string"/>
+      <xs:element name="lessons"     type="xs:positiveInteger"/>
+      <xs:element name="rating"      type="RatingType"/>
+      <xs:element name="price"       type="PriceType"/>
+      <xs:element name="level"       type="xs:string"/>
+      <xs:element name="description" type="xs:string"/>
+    </xs:sequence>
+    <!-- id attribute is required, format: C001, C002, etc. -->
+    <xs:attribute name="id" type="CourseIdType" use="required"/>
+  </xs:complexType>
+
+  <!-- Course ID: letter C followed by exactly 3 digits -->
+  <xs:simpleType name="CourseIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="C[0-9]{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Category: only allowed values -->
+  <xs:simpleType name="CategoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Development"/>
+      <xs:enumeration value="Data Science"/>
+      <xs:enumeration value="Design"/>
+      <xs:enumeration value="Cloud"/>
+      <xs:enumeration value="Security"/>
+      <xs:enumeration value="Business"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Rating: decimal between 1.0 and 5.0 -->
+  <xs:simpleType name="RatingType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="1.0"/>
+      <xs:maxInclusive value="5.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Price: decimal value with a required currency attribute -->
+  <xs:complexType name="PriceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="currency" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

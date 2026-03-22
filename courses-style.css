@@ -1,0 +1,152 @@
+/* =============================================
+   courses-style.css
+   Applied directly to courses.xml in the browser
+   Open courses.xml in a browser to see styled output
+   ============================================= */
+
+/* Root element - page background */
+courses {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f7fa;
+  padding: 30px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Each course block */
+course {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-left: 5px solid #1a73e8;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+course:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+title {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+/* Category badge */
+category {
+  display: inline-block;
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  font-size: 0.78rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Instructor */
+instructor {
+  display: block;
+  font-size: 0.9rem;
+  color: #444444;
+  margin-bottom: 6px;
+}
+
+instructor::before {
+  content: "Instructor: ";
+  font-weight: bold;
+  color: #222222;
+}
+
+/* Duration */
+duration {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: #555555;
+  margin-right: 20px;
+  margin-bottom: 6px;
+}
+
+duration::before {
+  content: "Duration: ";
+  font-weight: bold;
+  color: #222222;
+}
+
+/* Lessons */
+lessons {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: #555555;
+  margin-right: 20px;
+  margin-bottom: 6px;
+}
+
+lessons::before {
+  content: "Lessons: ";
+  font-weight: bold;
+  color: #222222;
+}
+
+/* Rating */
+rating {
+  display: inline-block;
+  font-size: 0.88rem;
+  color: #f59e0b;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-bottom: 6px;
+}
+
+rating::before {
+  content: "Rating: ";
+  font-weight: bold;
+}
+
+/* Price */
+price {
+  display: inline-block;
+  font-size: 1rem;
+  color: #1a1a2e;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+price::before {
+  content: "Price: Rs. ";
+  font-weight: bold;
+}
+
+/* Level */
+level {
+  display: block;
+  font-size: 0.88rem;
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+level::before {
+  content: "Level: ";
+  font-weight: bold;
+  color: #222222;
+}
+
+/* Description */
+description {
+  display: block;
+  font-size: 0.9rem;
+  color: #666666;
+  font-style: italic;
+  border-top: 1px solid #eeeeee;
+  padding-top: 10px;
+  margin-top: 6px;
+  line-height: 1.6;
+}

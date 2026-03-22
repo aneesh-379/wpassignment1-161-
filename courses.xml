@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="courses-style.css"?>
+<courses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="courses.xsd">
+
+  <course id="C001">
+    <title>Full-Stack Web Development</title>
+    <category>Development</category>
+    <instructor>Rahul Sharma</instructor>
+    <duration>48 hours</duration>
+    <lessons>120</lessons>
+    <rating>4.9</rating>
+    <price currency="INR">1999</price>
+    <level>Beginner to Advanced</level>
+    <description>
+      Master HTML, CSS, JavaScript, React and Node.js with hands-on projects.
+    </description>
+  </course>
+
+  <course id="C002">
+    <title>Machine Learning with Python</title>
+    <category>Data Science</category>
+    <instructor>Priya Nair</instructor>
+    <duration>55 hours</duration>
+    <lessons>145</lessons>
+    <rating>4.8</rating>
+    <price currency="INR">2499</price>
+    <level>Intermediate</level>
+    <description>
+      Learn supervised, unsupervised learning and neural networks from scratch.
+    </description>
+  </course>
+
+  <course id="C003">
+    <title>UI/UX Design Mastery</title>
+    <category>Design</category>
+    <instructor>Ananya Reddy</instructor>
+    <duration>36 hours</duration>
+    <lessons>95</lessons>
+    <rating>4.7</rating>
+    <price currency="INR">1499</price>
+    <level>Beginner</level>
+    <description>
+      Learn Figma, user research, wireframing and prototyping techniques.
+    </description>
+  </course>
+
+  <course id="C004">
+    <title>AWS Solutions Architect</title>
+    <category>Cloud</category>
+    <instructor>Vikram Patel</instructor>
+    <duration>60 hours</duration>
+    <lessons>160</lessons>
+    <rating>4.9</rating>
+    <price currency="INR">3499</price>
+    <level>Intermediate to Advanced</level>
+    <description>
+      Prepare for AWS SAA-C03 certification with hands-on cloud labs and projects.
+    </description>
+  </course>
+
+  <course id="C005">
+    <title>Ethical Hacking and Cybersecurity</title>
+    <category>Security</category>
+    <instructor>Suresh Menon</instructor>
+    <duration>42 hours</duration>
+    <lessons>110</lessons>
+    <rating>4.6</rating>
+    <price currency="INR">2199</price>
+    <level>Intermediate</level>
+    <description>
+      Learn penetration testing, vulnerability assessment and security tools.
+    </description>
+  </course>
+
+</courses>

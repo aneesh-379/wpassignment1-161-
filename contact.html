@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - EduForge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">EduForge</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out anytime!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Our Contact Details</h2>
+
+      <div class="info-item">
+        <h3>Address</h3>
+        <p>EduForge Learning Pvt. Ltd.<br />
+           HITEC City, Hyderabad,<br />
+           Telangana – 500081, India</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Email</h3>
+        <p>support@eduforge.com</p>
+        <p>admissions@eduforge.com</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Phone</h3>
+        <p>+91 40 1234 5678</p>
+        <p>+91 98765 43210 (WhatsApp)</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Working Hours</h3>
+        <p>Monday – Friday: 9 AM – 6 PM IST</p>
+        <p>Saturday: 10 AM – 4 PM IST</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+
+      <div id="contactSuccess" class="msg-success" style="display:none;">
+        Thank you! We will respond within 24 hours.
+      </div>
+
+      <form id="contactForm" novalidate>
+
+        <div class="form-group">
+          <label for="cName">Your Name</label>
+          <input type="text" id="cName" placeholder="Enter your name" />
+          <span class="error" id="cNameErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cEmail">Email Address</label>
+          <input type="email" id="cEmail" placeholder="you@example.com" />
+          <span class="error" id="cEmailErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cPhone">Phone Number (optional)</label>
+          <input type="tel" id="cPhone" placeholder="+91 98765 43210" />
+        </div>
+
+        <div class="form-group">
+          <label for="cSubject">Subject</label>
+          <select id="cSubject">
+            <option value="">-- Select a topic --</option>
+            <option>Course Enquiry</option>
+            <option>Technical Support</option>
+            <option>Billing &amp; Payment</option>
+            <option>Certificate Issue</option>
+            <option>Other</option>
+          </select>
+          <span class="error" id="cSubjectErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cMessage">Your Message</label>
+          <textarea id="cMessage" rows="5" placeholder="Type your message here..."></textarea>
+          <span class="error" id="cMessageErr"></span>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EduForge. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      document.querySelectorAll(".error").forEach(el => el.textContent = "");
+      document.getElementById("contactSuccess").style.display = "none";
+
+      var name    = document.getElementById("cName").value.trim();
+      var email   = document.getElementById("cEmail").value.trim();
+      var subject = document.getElementById("cSubject").value;
+      var message = document.getElementById("cMessage").value.trim();
+      var valid   = true;
+
+      if (name.length < 2) {
+        document.getElementById("cNameErr").textContent = "Please enter your name.";
+        valid = false;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById("cEmailErr").textContent = "Please enter a valid email.";
+        valid = false;
+      }
+      if (!subject) {
+        document.getElementById("cSubjectErr").textContent = "Please select a subject.";
+        valid = false;
+      }
+      if (message.length < 10) {
+        document.getElementById("cMessageErr").textContent = "Message must be at least 10 characters.";
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById("contactSuccess").style.display = "block";
+        this.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
